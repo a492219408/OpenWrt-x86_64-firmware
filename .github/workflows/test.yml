@@ -32,10 +32,8 @@ jobs:
           echo Hello, world!
           echo "test=123" >> $GITHUB_OUTPUT
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        if: ${{ steps.hello.outputs.test == '123' }}
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          echo ${{ github.token }}
+      - name: Delete workflow runs
+        uses: a492219408/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
