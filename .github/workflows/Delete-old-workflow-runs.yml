@@ -14,7 +14,7 @@ jobs:
       actions: write
     steps:
       - name: Delete workflow runs
-        uses: a492219408/OpenWrt-x86_64-firmware@main
+        uses: a492219408/delete-workflow-runs@main
         with:
           token: ${{ secrets.AUTH_PAT }}
           repository: ${{ github.repository }}
