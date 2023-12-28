@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete workflow runs
-        uses: ActionsRML/delete-workflow-runs@main
+        uses: ${{ github.repository }}@main
         with:
           token: ${{ secrets.AUTH_PAT }}
           repository: ${{ github.repository }}
