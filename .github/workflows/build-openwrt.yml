@@ -157,7 +157,7 @@ jobs:
 
       - name: Generate release tag
         id: tag
-        if: ${{ env.UPLOAD_RELEASE == 'true' && }}
+        if: ${{ env.UPLOAD_RELEASE == 'true' }}
         run: |
           echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
           touch release.txt
@@ -167,7 +167,7 @@ jobs:
 
       - name: Upload firmware to release
         uses: softprops/action-gh-release@v1
-        if: ${{ steps.tag.outputs.status == 'success' && }}
+        if: ${{ steps.tag.outputs.status == 'success' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
