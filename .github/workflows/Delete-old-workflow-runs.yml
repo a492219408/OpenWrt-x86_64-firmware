@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete workflow runs
-        uses: ${{ github.repository }}@main
+        uses: a492219408/OpenWrt-x86_64-firmware@main
         with:
           token: ${{ secrets.AUTH_PAT }}
           repository: ${{ github.repository }}
