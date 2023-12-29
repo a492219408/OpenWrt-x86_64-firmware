@@ -5,8 +5,14 @@ on:
       days:
         description: 'Number of days.'
         required: true
+        type: number
         default: '90'
-
+      keep_minimum_runs:
+        description: 'keep_minimum_runs.'
+        required: true
+        type: number
+        default: '6'
+        
 jobs:
   del_runs:
     runs-on: ubuntu-latest
@@ -19,3 +25,4 @@ jobs:
           token: ${{ secrets.AUTH_PAT }}
           repository: ${{ github.repository }}
           retain_days: ${{ fromJSON(github.event.inputs.days) }}
+          keep_minimum_runs: ${{ fromJSON(github.event.inputs.keep_minimum_runs) }}
