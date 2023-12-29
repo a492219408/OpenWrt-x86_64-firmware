@@ -23,11 +23,15 @@ jobs:
 
     steps:
       - name: Checkout OpenWrt
+        id: checkout_OpenWrt
         uses: actions/checkout@v4
         with:
           repository: coolsnowwolf/lede
+        run: |
+          echo "repo_path=$(pwd)" >> $GITHUB_OUTPUT
+          echo "git_file_last_time=$(git log -1 --format=%cd)" >> $GITHUB_OUTPUT
 
       - name: Check for updates
         id: check
         run: |
-          ls -al
+          echo "${ steps.checkout_OpenWrt.outputs.git_file_last_time }"
