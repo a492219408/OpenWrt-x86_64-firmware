@@ -35,4 +35,18 @@ jobs:
         id: check
         run: |
           echo "$PWD"
-          echo "$(git log -1 --format=%cd)"
+          # 获取最新提交的时间
+          git_time=$(git log -1 --format=%cd --date=iso)
+          echo "Git time: $git_time"
+
+          # 获取当前系统时间
+          system_time=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "System time: $system_time"
+
+          # 将时间转换为秒
+          git_time_seconds=$(date -u -d "$git_time" +"%s")
+          system_time_seconds=$(date -u -d "$system_time" +"%s")
+
+          # 计算时差
+          time_difference=$(expr $system_time_seconds - $git_time_seconds)
+          echo "Time difference in seconds: $time_difference"
