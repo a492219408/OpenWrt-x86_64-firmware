@@ -1,0 +1,39 @@
+repository: openwrt/openwrt
+tag: v23.05.2
+commit: 1c26bcb10819f072964a658e2cc29bb87613a6f5
+
+
+Target System (x86)  --->
+    (X) x86
+Subtarget (x86_64)  --->
+    (X) x86_64
+Target Profile (Generic x86/64)  --->
+    (X) Generic x86/64
+Target Images
+    [*] Build VirtualBox image files (VDI)
+    [*] Build VMware image files (VMDK)
+Base system
+    < > dnsmasq.............................................. DNS and DHCP server
+LuCI
+    1. Collections
+        <*> luci................... LuCI interface with Uhttpd as Webserver (default)
+        <*> luci-lib-docker.................................. LuCI library for docker
+        <*> luci-nginx........................ LuCI interface with Nginx as Webserver
+    2. Modules
+        Translations  --->
+            <*> Chinese Simplified (zh_Hans)
+    3. Applications
+        <*> luci-app-adguardhome............................ LuCI app for AdGuardHome
+        <*> luci-app-openclash................................ LuCI support for clash
+
+        <*> luci-app-netdata................................ LuCI support for Netdata
+        <*> luci-app-filetransfer........................... LuCI page for IPK upload
+        <*> luci-app-nlbwmon...................... Netlink based bandwidth accounting
+        <*> luci-app-ttyd...................................... LuCI support for ttyd
+        <*> luci-app-vlmcsd..................................... LuCI support for KMS
+        <*> luci-app-wol................................ LuCI Support for Wake-on-LAN
+    4. Themes
+        <*> luci-theme-argon............................................. Argon Theme
+Network
+    SSH
+        <*> openssh-sftp-server.................................. OpenSSH SFTP server
