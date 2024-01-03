@@ -21,12 +21,12 @@ rm -rf feeds.conf.default
 {
 echo 'src-git packages https://git.openwrt.org/feed/packages.git^8e3a1824645f5e73ec44c897ac0755c53fb4a1f8'
 #echo 'src-git luci https://git.openwrt.org/project/luci.git^7739e9f5b03b830f51d53c384be4baef95054cb3'
-#echo 'src-git routing https://git.openwrt.org/feed/routing.git^83ef3784a9092cfd0a900cc28e2ed4e13671d667'
-#echo 'src-git telephony https://git.openwrt.org/feed/telephony.git^9746ae8f964e18f04b64fbe1956366954ff223f8'
+echo 'src-git routing https://git.openwrt.org/feed/routing.git^83ef3784a9092cfd0a900cc28e2ed4e13671d667'
+echo 'src-git telephony https://git.openwrt.org/feed/telephony.git^9746ae8f964e18f04b64fbe1956366954ff223f8'
 
 #echo 'src-git packages https://github.com/coolsnowwolf/packages'
 echo 'src-git luci https://github.com/coolsnowwolf/luci'
-echo 'src-git routing https://github.com/coolsnowwolf/routing'
+#echo 'src-git routing https://github.com/coolsnowwolf/routing'
 #echo 'src-git helloworld https://github.com/fw876/helloworld.git'
 #echo 'src-git oui https://github.com/zhaojh329/oui.git'
 #echo 'src-git video https://github.com/openwrt/video.git'
